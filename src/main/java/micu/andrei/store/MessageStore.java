@@ -20,7 +20,7 @@ public class MessageStore {
         return notNeedForMoreThanAMap.values();
     }
 
-    public void createMessage(Message message) {
+    public void addMessage(Message message) {
 
         String key = message.username() + message.timestamp();
 
@@ -41,7 +41,7 @@ public class MessageStore {
             throw new MessageDoesNotExistException(message);
         }
 
-        notNeedForMoreThanAMap.put(key, message);
+        notNeedForMoreThanAMap.put(key, new Message(previous.username(), message.text(), previous.timestamp()));
     }
 
     public void deleteMessage(String username, long timestamp) {
