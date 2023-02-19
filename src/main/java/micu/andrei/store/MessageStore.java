@@ -1,4 +1,4 @@
-package micu.andrei.service;
+package micu.andrei.store;
 
 import micu.andrei.exceptions.MessageAlreadyExistsException;
 import micu.andrei.exceptions.MessageDoesNotExistException;
@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class MessageStore {
 
-    private Map<String, Message> notNeedForMoreThanAMap = new HashMap<>();
+    private final Map<String, Message> notNeedForMoreThanAMap = new HashMap<>();
 
     public Collection<Message> getAllMessages() {
 
